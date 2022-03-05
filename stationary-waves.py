@@ -1,6 +1,9 @@
 import math
 import pygame
 
+# it's messy but gets the job done
+# performing calculations on 2160 objects is as hefty of a task as it might seem.
+
 SCREENWIDTH, SCREENHEIGHT = 900,770
 
 WAVECOUNT = 2
