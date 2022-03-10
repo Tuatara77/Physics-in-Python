@@ -37,10 +37,6 @@ class Point(pygame.sprite.Sprite):
                 self.rect.x = 90
 
         if self in stationary:
-            alist = []
-            for f in progressive:
-                if f.rect.centerx == self.rect.centerx:
-                    alist.append(f.rect.centery)
             alist = [f.rect.centery for f in progressive if f.rect.centerx == self.rect.centerx]
             if len(alist) == 2:
                 coord1 = EQUILIBRIUM_LINE_2_YCOORD-alist[0]
