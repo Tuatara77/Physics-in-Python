@@ -41,11 +41,12 @@ class Point(pygame.sprite.Sprite):
             for f in progressive:
                 if f.rect.centerx == self.rect.centerx:
                     alist.append(f.rect.centery)
+            alist = [f.rect.centery for f in progressive if f.rect.centerx == self.rect.centerx]
             if len(alist) == 2:
                 coord1 = EQUILIBRIUM_LINE_2_YCOORD-alist[0]
                 coord2 = EQUILIBRIUM_LINE_1_YCOORD-alist[1]
                 coord3 = coord1+coord2
-                self.rect.centery = EQUILIBRIUM_LINE_3_YCOORD+coord3
+                self.rect.centery = EQUILIBRIUM_LINE_3_YCOORD-coord3
 
 
 pygame.init()
